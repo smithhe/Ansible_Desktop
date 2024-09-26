@@ -3,17 +3,49 @@
   tasks:
 
     # Create the user's Pictures directory if it doesn't exist
-    - name: Ensure Directories Exist
+    - name: Ensure Pictures Directory Exists
       file:
         path: "{{ ansible_env.HOME }}/Pictures"
         state: directory
+        owner: "{{ ansible_env.USER }}"
+        group: "{{ ansible_env.USER }}"
         mode: '0755'
 
     # Copy icons to the user's Pictures directory
     - name: Copy Icons
       copy:
-        src: ./Icons
-        dest: "{{ ansible_env.HOME }}/Pictures"
+        src: ./icons/
+        dest: "{{ ansible_env.HOME }}/Pictures/Icons"
         owner: "{{ ansible_env.USER }}"
         group: "{{ ansible_env.USER }}"
         mode: '0755'
+        recursive: yes
+
+    # Copy backgrounds to the user's Pictures directory
+    - name: Copy Backgrounds
+      copy:
+        src: ./backgrounds/
+        dest: "{{ ansible_env.HOME }}/Pictures/Backgrounds/"
+        owner: "{{ ansible_env.USER }}"
+        group: "{{ ansible_env.USER }}"
+        mode: '0755'
+        recursive: yes
+
+    # Create the user's Music directory if it doesn't exist
+    - name: Ensure Music Directory Exists
+      file:
+        path: "{{ ansible_env.HOME }}/Music"
+        state: directory
+        owner: "{{ ansible_env.USER }}"
+        group: "{{ ansible_env.USER }}"
+        mode: '0755'
+
+    # Copy the Sounds directory to the user's Music directory
+    - name: Copy Sounds
+      copy:
+        src: ./sounds/
+        dest: "{{ ansible_env.HOME }}/Music/Sounds"
+        owner: "{{ ansible_env.USER }}"
+        group: "{{ ansible_env.USER }}"
+        mode: '0755'
+        recursive: yes
