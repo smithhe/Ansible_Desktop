@@ -1,0 +1,15 @@
+---
+- name: Configure Desktop Settings
+  tasks:
+
+    #Set wallpaper
+    - name: Set the desktop wallpaper in Linux Mint (Cinnamon)
+      command: >
+        gsettings set org.cinnamon.desktop.background picture-uri "file://{{ ansible_env.HOME }}/Pictures/pcarmona_road.jpg"
+
+    #Set Custom Sounds
+    - name: Set custom login sound
+      command: dconf write /org/cinnamon/sounds/login-file "'{{ ansible_env.HOME }}/Music/Sounds/Windows 7 - Startup Sound.ogg'"
+    
+    - name: Set custom logout sound
+      command: dconf write /org/cinnamon/sounds/login-file "'{{ ansible_env.HOME }}/Music/Sounds/Windows 7 Shutdown.ogg'"

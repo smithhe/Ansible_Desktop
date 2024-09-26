@@ -9,5 +9,11 @@
       changed_when: False
   
   tasks:
+    # Copy Files
+    - include_tasks: ./files/files.yml
+
+    # Configure Desktop
+    - include_tasks: ./configure_desktop.yml
+
     # Install Flatpaks
-    -include_tasks: ./software/flatpaks.yml
+    - include_tasks: ./software/flatpaks.yml
