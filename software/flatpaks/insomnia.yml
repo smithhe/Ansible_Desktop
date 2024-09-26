@@ -1,0 +1,5 @@
+---
+- name: Install Insomnia
+  community.general.flatpak:
+    name: com.insomnia.Insomnia
+    state: latest

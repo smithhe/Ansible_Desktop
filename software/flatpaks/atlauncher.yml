@@ -1,0 +1,5 @@
+---
+- name: Install At Launcher
+  community.general.flatpak:
+    name: com.atlauncher.AtLauncher
+    state: latest

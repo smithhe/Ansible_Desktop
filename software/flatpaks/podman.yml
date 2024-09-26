@@ -1,0 +1,5 @@
+---
+- name: Install Podman
+  community.general.flatpak:
+    name: io.podman_desktop.PodmanDesktop
+    state: latest

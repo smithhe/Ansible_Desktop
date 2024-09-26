@@ -1,0 +1,5 @@
+---
+- name: Install Exodus
+  community.general.flatpak:
+    name: io.exodus.Exodus
+    state: latest

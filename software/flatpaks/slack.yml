@@ -1,0 +1,5 @@
+---
+- name: Install Slack
+  community.general.flatpak:
+    name: com.slack.Slack
+    state: latest

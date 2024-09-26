@@ -1,0 +1,5 @@
+---
+- name: Install OnlyOffice
+  community.general.flatpak:
+    name: com.onlyoffice.desktopeditors
+    state: latest

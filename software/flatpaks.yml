@@ -1,0 +1,21 @@
+---
+- name: Install Flapaks
+  tasks:
+    # Add the flathub flatpak repository
+    - name: Add the flathub flatpak repository remote to the user installation
+      community.general.flatpak_remote:
+        name: flathub
+        state: present
+        flatpakrepo_url: https://dl.flathub.org/repo/flathub.flatpakrepo
+
+    # Install Flatpaks
+    - include_tasks: flatpaks/atlauncher.yml
+    - include_tasks: flatpaks/brave.yml
+    - include_tasks: flatpaks/discord.yml
+    - include_tasks: flatpaks/drawio.yml
+    - include_tasks: flatpaks/exodus.yml
+    - include_tasks: flatpaks/insomnia.yml
+    - include_tasks: flatpaks/onlyoffice.yml
+    - include_tasks: flatpaks/podman.yml
+    - include_tasks: flatpaks/slack.yml
+    - include_tasks: flatpaks/spotify.yml

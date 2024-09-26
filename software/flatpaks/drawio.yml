@@ -1,0 +1,5 @@
+---
+- name: Install Draw.IO
+  community.general.flatpak:
+    name: com.jgraph.drawio.desktop
+    state: latest

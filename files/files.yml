@@ -1,0 +1,19 @@
+---
+- name: Copy Files
+  tasks:
+
+    # Create the user's Pictures directory if it doesn't exist
+    - name: Ensure Directories Exist
+      file:
+        path: "{{ ansible_env.HOME }}/Pictures"
+        state: directory
+        mode: '0755'
+
+    # Copy icons to the user's Pictures directory
+    - name: Copy Icons
+      copy:
+        src: ./Icons
+        dest: "{{ ansible_env.HOME }}/Pictures"
+        owner: "{{ ansible_env.USER }}"
+        group: "{{ ansible_env.USER }}"
+        mode: '0755'
