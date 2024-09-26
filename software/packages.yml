@@ -1,0 +1,15 @@
+---
+- name: Install Repos and Packages
+  tasks:
+
+    # Install packages that exist in the default system repos
+    - name: Install System Repo Packages
+      apt:
+        name: 
+          - audacity
+          - btop
+          - chromium
+          - ksnip
+          - vim
+          - virtualbox-qt
+        state: latest
